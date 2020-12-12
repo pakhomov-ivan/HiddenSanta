@@ -11,9 +11,6 @@ for i in range(len(names)):
 
 print(links)
 
-@app.route('/')
-def hello():
-    return 'Its Hidden Santa!'
 
 @app.route('/links')
 def return_links():
@@ -26,9 +23,14 @@ def return_links():
 
 @app.route('/<uuid>')
 def index(uuid):
-    if links.get(uuid, True):
-        abort(404)
-    return render_template('santa.html', name=links[uuid])
+    if links.get(uuid, False):
+        return render_template('santa.html', name=links[uuid])
+    abort(404)
+
+
+@app.route('/')
+def hello():
+    return 'Its Hidden Santa!'
 
 
 @app.errorhandler(404)
