@@ -11,6 +11,9 @@ for i in range(len(names)):
 
 print(links)
 
+@app.route('/')
+def hello():
+    return 'Its Hidden Santa!'
 
 @app.route('/links')
 def return_links():
