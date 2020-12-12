@@ -1,1 +1,1 @@
-web: gunicorn app:HiddenSanta
+web: gunicorn app:app
