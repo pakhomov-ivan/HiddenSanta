@@ -1,1 +1,1 @@
-web: gunicorn HiddenSanta:app.py
+web: gunicorn HiddenSanta:__main__
