@@ -10,12 +10,12 @@ for i in range(len(names)):
 
 print(links)
 
-# @app.route('/links')
-# def return_links():
-#     html_links = ""
-#     for i, link in enumerate(links.items()):
-#         html_links += '<a href="%s%s" target="_blank">%d</a><br>' % (request.host_url, link[0], i+1)
-#     return html_links
+@app.route('/links')
+def return_links():
+    html_links = ""
+    for i, link in enumerate(links.items()):
+        html_links += '<a href="%s%s" target="_blank">%d</a><br>' % (request.host_url, link[0], i+1)
+    return html_links
 
 @app.route('/<uuid>')
 def index(uuid):
