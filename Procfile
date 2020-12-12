@@ -1,1 +1,1 @@
-web: gunicorn ./HiddenSanta/app:app
+web: gunicorn app:app
