@@ -16,8 +16,8 @@ print(links)
 def return_links():
     html_links = ""
     for i, link in enumerate(links.items()):
-        html_links += '<a href="%s%s" target="_blank">%d</a><br>' % (
-            request.host_url, link[0], i+1)
+        html_links += '<a href="%s%s" target="_blank">%s%s</a><br>' % (
+            request.host_url, link[0], request.host_url, link[0])
     return html_links
 
 
