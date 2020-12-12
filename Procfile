@@ -1,1 +1,1 @@
-web: gunicorn HiddenSanta:__init__.py
+web: gunicorn HiddenSanta:__init__
