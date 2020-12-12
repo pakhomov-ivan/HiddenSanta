@@ -1,1 +1,1 @@
-web: gunicorn HiddenSanta:HiddenSanta/__init__
+web: gunicorn HiddenSanta:__init__
