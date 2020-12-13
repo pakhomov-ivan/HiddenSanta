@@ -18,6 +18,17 @@
 
         }
 
+        input {
+            background-color: #F24236;
+            height: 50px;
+            border-color: white;
+            border-style: dashed;
+            position: inherit;
+            font-size: 28px;
+            color: #FFF;
+            ;
+        }
+
         #days {
             font-size: 50px;
             color: #FFF;
@@ -63,14 +74,12 @@
 <body>
     <form action="" method="POST">
         <div class="container">
-            <label for="password" class="">Скажи волшебное слово: </label>
-            <input type="password" name="password">
+            <label id="days" for="password">Скажи волшебное слово: </label>
+            <input type="text" name="password" class="input">
+            <input type="submit">
         </div>
-        <input type="submit">
     </form>
-    </div>
     <script id="INLINE_PEN_JS_ID">
-        $('#days').text('Ты "Тайный Санта" для {{ name }}')
 
         //make snow
         snowDrop(150, randomInt(1035, 1280));
