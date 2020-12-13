@@ -1,4 +1,5 @@
 from flask import Flask, request, render_template, abort
+import hashlib as hl
 import uuid
 import random
 app = Flask(__name__)
@@ -9,7 +10,44 @@ links = {}
 for i in range(len(names)):
     links[str(uuid.uuid4())] = names.pop(random.randint(0, len(names)-1))
 
-print(links)
+
+logins_passwords = {
+    'kolyam': {'literal_name': 'Коли М', 'whos_santa': '', 'password': 'c4ca4238a0b923820dcc509a6f75849b'},
+    'natasha': {'literal_name': 'Наташи', 'whos_santa': '', 'password': 'c81e728d9d4c2f636f067f89cc14862c'},
+    'ivan': {'literal_name': 'Ивана', 'whos_santa': '', 'password': 'eccbc87e4b5ce2fe28308fd9f2a7baf3'},
+    'alina': {'literal_name': 'Алины', 'whos_santa': '', 'password': 'a87ff679a2f3e71d9181a67b7542122c'},
+    'artyom': {'literal_name': 'Артёма', 'whos_santa': '', 'password': 'e4da3b7fbbce2345d7772b0674a318d5'},
+    'kolyar': {'literal_name': 'Коли Р', 'whos_santa': '', 'password': '1679091c5a880faf6fb5e6087eb1b2dc'},
+    'masha': {'literal_name': 'Маши', 'whos_santa': '', 'password': '8f14e45fceea167a5a36dedd4bea2543'},
+}
+# random.shuffle(logins_passwords)
+lit_names = list(
+    map(lambda item: item['literal_name'], logins_passwords.values()))
+random.shuffle(lit_names)
+for i, item in enumerate(logins_passwords.values()):
+    if(item['literal_name'] == lit_names[i]):
+        if(i + 1 < len(logins_passwords)):
+            lit_names[i+1], lit_names[i] = lit_names[i], lit_names[i+1]
+        else:
+            lit_names[1], lit_names[i] = lit_names[i], lit_names[1]
+
+for i, item in enumerate(logins_passwords.values()):
+    item['whos_santa'] = lit_names[i]
+print(logins_passwords)
+
+
+@app.route('/santa/<name>', methods=['GET', 'POST'])
+def your_santa(name):
+    if logins_passwords.get(name, False):
+        if request.method == 'GET':
+            return render_template('santa_login.html')
+        if request.method == 'POST':
+            password = request.form.get('password')
+            if logins_passwords[name]['password'] == hl.md5(password.encode()).hexdigest():
+                return render_template('santa.html', name=logins_passwords[name]['whos_santa'])
+            else:
+                return render_template('santa_login.html')
+    abort(404)
 
 
 @app.route('/links')
