@@ -2,3 +2,4 @@
 venv
 hiddensanta.egg-info
 HiddenSanta/__pycache__/__init__.cpython-36.pyc
+__pycache__/*
