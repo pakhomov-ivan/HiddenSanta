@@ -12,13 +12,13 @@ for i in range(len(names)):
 
 
 logins_passwords = {
-    'kolyam': {'literal_name': 'Коли М', 'whos_santa': '', 'password': 'c4ca4238a0b923820dcc509a6f75849b'},
-    'natasha': {'literal_name': 'Наташи', 'whos_santa': '', 'password': 'c81e728d9d4c2f636f067f89cc14862c'},
-    'ivan': {'literal_name': 'Ивана', 'whos_santa': '', 'password': 'eccbc87e4b5ce2fe28308fd9f2a7baf3'},
-    'alina': {'literal_name': 'Алины', 'whos_santa': '', 'password': 'a87ff679a2f3e71d9181a67b7542122c'},
-    'artyom': {'literal_name': 'Артёма', 'whos_santa': '', 'password': 'e4da3b7fbbce2345d7772b0674a318d5'},
-    'kolyar': {'literal_name': 'Коли Р', 'whos_santa': '', 'password': '1679091c5a880faf6fb5e6087eb1b2dc'},
-    'masha': {'literal_name': 'Маши', 'whos_santa': '', 'password': '8f14e45fceea167a5a36dedd4bea2543'},
+    'kolyam': {'literal_name': 'Коли М', 'whos_santa': '', 'password': 'd101e579f9c5031dbe2e2175bfe9498f'}, #1 c4ca4238a0b923820dcc509a6f75849b
+    'natasha': {'literal_name': 'Наташи', 'whos_santa': '', 'password': 'e072e2d4ff6cf0ba4fd101bb787449c3'}, #2 c81e728d9d4c2f636f067f89cc14862c
+    'ivan': {'literal_name': 'Ивана', 'whos_santa': '', 'password': 'b33da7a629e59c1170772e63e4dd13b4'}, #3 eccbc87e4b5ce2fe28308fd9f2a7baf3
+    'alina': {'literal_name': 'Алины', 'whos_santa': '', 'password': '346df3075bcd56cb29d3c2c052ae260e'}, #4 a87ff679a2f3e71d9181a67b7542122c
+    'artyom': {'literal_name': 'Артёма', 'whos_santa': '', 'password': 'e4da3b7fbbce2345d7772b0674a318d5'}, #5 e4da3b7fbbce2345d7772b0674a318d5
+    'kolyar': {'literal_name': 'Коли Р', 'whos_santa': '', 'password': '53ca2bc739d6b415b4f434cbb3c5c3b5'}, #6 1679091c5a880faf6fb5e6087eb1b2dc
+    'masha': {'literal_name': 'Маши', 'whos_santa': '', 'password': 'fee2539beb140d4a5008ca1ecec613ce'}, #7 8f14e45fceea167a5a36dedd4bea2543
 }
 # random.shuffle(logins_passwords)
 lit_names = list(
